@@ -23,6 +23,14 @@ public class GridScript : MonoBehaviour {
 			(i * (EndPosition - transform.position).y / (N - 1)) * Vector3.up +
 			(0.5f * (EndPosition - transform.position).x / (N - 1)) * Vector3.right;
 		}
+
+		else if (tag == "Tile_2") {
+			return 	transform.position +
+				(j * (EndPosition - transform.position).x / (N - 1)) * Vector3.right +
+				(i * (EndPosition - transform.position).y / (N - 1)) * Vector3.up +
+				(0.5f * (EndPosition - transform.position).y / (N - 1)) * Vector3.up;
+		}
+
 		else if (tag == "Tile_3") {
 			return 	transform.position +
 			(j * (EndPosition - transform.position).x / (N - 1)) * Vector3.right +
