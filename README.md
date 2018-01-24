@@ -8,6 +8,6 @@ This is my unity 2D game projects.
           &nbsp&nbsp&nbsp : Visualization Catalan number using some blocks
         </li>
       </ul>
-    <p>&emsp;&emsp;&emsp;<img src = "http://cfile27.uf.tistory.com/image/998058395A68BCD6141ACE" width = "300" height = "150"></p> 
+    <p>&emsp;&emsp;&emsp;&emsp;<img src = "http://cfile27.uf.tistory.com/image/998058395A68BCD6141ACE" width = "300" height = "150"></p> 
   </body>
 </html>
