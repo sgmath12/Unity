@@ -23,12 +23,12 @@ public class MouseClick : MonoBehaviour {
 		if (timer_end - timer_start > 0 && // if it is a 'click', NOT drag
 		   timer_end - timer_start < 0.1){ 
 			Debug.Log ("click");
-			new_scale.x = 1.973f;
-			new_scale.y = 4f;
+
+			//rotation
+			new_scale.x = transform.localScale.y;
+			new_scale.y = transform.localScale.x;
 			transform.localScale = new_scale;
-
 		
-
 			timer_start = 0;
 			timer_end = 0;
 		}
