@@ -27,7 +27,7 @@ public class MouseClick : MonoBehaviour {
 
 		if (timer_end - timer_start > 0 && // if it is a 'click', NOT drag
 		   timer_end - timer_start < 0.1){ 
-			Debug.Log ("click");
+
 
 			//rotation
 			new_scale.x = transform.localScale.y;
@@ -38,6 +38,11 @@ public class MouseClick : MonoBehaviour {
 				gameObject.tag = "Tile_2";
 			else if (gameObject.tag == "Tile_2")
 				gameObject.tag = "Tile_1";
+			else if (gameObject.tag == "Tile_4") {
+				gameObject.tag = "Tile_5";
+			}
+			else if (gameObject.tag == "Tile_5")
+				gameObject.tag = "Tile_4";
 
 
 			timer_start = 0;

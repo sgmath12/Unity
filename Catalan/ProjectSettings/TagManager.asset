@@ -8,6 +8,8 @@ TagManager:
   - Tile_1
   - Tile_3
   - Tile_4
+  - Tile_2
+  - Tile_5
   layers:
   - Default
   - TransparentFX
@@ -44,4 +46,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: 1
+    uniqueID: 1047102183
     locked: 0

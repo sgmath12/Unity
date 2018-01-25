@@ -1,8 +1,11 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Editor\GridEditor.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\IsComplete.cs">
     <Files>
-      <File FileName="Assets\Editor\GridEditor.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Draggable.cs" Line="43" Column="2" />
+      <File FileName="Assets\Scripts\GridScript.cs" Line="17" Column="55" />
+      <File FileName="Assets\Scripts\MouseClick.cs" Line="22" Column="28" />
+      <File FileName="Assets\Scripts\IsComplete.cs" Line="15" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

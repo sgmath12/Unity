@@ -16,35 +16,37 @@ public class GridScript : MonoBehaviour {
 			return 	transform.position +
 			(j * (EndPosition - transform.position).x / (N - 1)) * Vector3.right +
 			(i * (EndPosition - transform.position).y / (N - 1)) * Vector3.up;
-		} 
-		else if (tag == "Tile_1") {
+		} else if (tag == "Tile_1") {
 			return 	transform.position +
 			(j * (EndPosition - transform.position).x / (N - 1)) * Vector3.right +
 			(i * (EndPosition - transform.position).y / (N - 1)) * Vector3.up +
 			(0.5f * (EndPosition - transform.position).x / (N - 1)) * Vector3.right;
-		}
-
-		else if (tag == "Tile_2") {
+		} else if (tag == "Tile_2") {
 			return 	transform.position +
-				(j * (EndPosition - transform.position).x / (N - 1)) * Vector3.right +
-				(i * (EndPosition - transform.position).y / (N - 1)) * Vector3.up +
-				(0.5f * (EndPosition - transform.position).y / (N - 1)) * Vector3.up;
-		}
+			(j * (EndPosition - transform.position).x / (N - 1)) * Vector3.right +
+			(i * (EndPosition - transform.position).y / (N - 1)) * Vector3.up +
+			(0.5f * (EndPosition - transform.position).y / (N - 1)) * Vector3.up;
+		} else if (tag == "Tile_3") {
+			return 	transform.position +
+			(j * (EndPosition - transform.position).x / (N - 1)) * Vector3.right +
+			(i * (EndPosition - transform.position).y / (N - 1)) * Vector3.up +
+			(0.5f * (EndPosition - transform.position).x / (N - 1)) * Vector3.right +
+			(0.5f * (EndPosition - transform.position).y / (N - 1)) * Vector3.up;
 
-		else if (tag == "Tile_3") {
+		} else if (tag == "Tile_4") {
 			return 	transform.position +
 			(j * (EndPosition - transform.position).x / (N - 1)) * Vector3.right +
 			(i * (EndPosition - transform.position).y / (N - 1)) * Vector3.up +
 			(1f * (EndPosition - transform.position).x / (N - 1)) * Vector3.right;
 		} 
-		else if (tag == "Tile_4") {
+
+		else if (tag == "Tile_5") {
 			return 	transform.position +
-				(j * (EndPosition - transform.position).x / (N - 1)) * Vector3.right +
-				(i * (EndPosition - transform.position).y / (N - 1)) * Vector3.up +
-				(0.5f * (EndPosition - transform.position).x / (N - 1)) * Vector3.right+
-				(0.5f * (EndPosition - transform.position).y / (N - 1)) * Vector3.up;
-		
+			(j * (EndPosition - transform.position).x / (N - 1)) * Vector3.right +
+			(i * (EndPosition - transform.position).y / (N - 1)) * Vector3.up +
+			(1f * (EndPosition - transform.position).y / (N - 1)) * Vector3.up;
 		}
+
 
 
 		return new Vector3 (0, 0, 0);
