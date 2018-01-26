@@ -8,6 +8,7 @@ public class MouseClick : MonoBehaviour {
 	public GameObject grid;
 	private GridScript gridscript;
 	private float timer_start,timer_end;
+
 	// Use this for initialization
 	void Start(){
 		timer_start = 0f;
@@ -25,7 +26,7 @@ public class MouseClick : MonoBehaviour {
 		if (Input.GetMouseButtonUp (0))
 			timer_end = Time.time; //store the time at the beginning of 'click up'
 
-		if (timer_end - timer_start > 0 && // if it is a 'click', NOT drag
+		if (timer_end - timer_start > 0 && // if it is a 'left click', NOT drag
 		   timer_end - timer_start < 0.1){ 
 
 
@@ -34,21 +35,23 @@ public class MouseClick : MonoBehaviour {
 			new_scale.y = transform.localScale.x;
 			transform.localScale = new_scale;
 
-			if (gameObject.tag == "Tile_1")
+			if (gameObject.tag == "Tile_2")
+				gameObject.tag = "Tile_3";
+			else if (gameObject.tag == "Tile_3")
 				gameObject.tag = "Tile_2";
-			else if (gameObject.tag == "Tile_2")
-				gameObject.tag = "Tile_1";
-			else if (gameObject.tag == "Tile_4") {
-				gameObject.tag = "Tile_5";
+			else if (gameObject.tag == "Tile_5") {
+				gameObject.tag = "Tile_6";
 			}
-			else if (gameObject.tag == "Tile_5")
-				gameObject.tag = "Tile_4";
+			else if (gameObject.tag == "Tile_6")
+				gameObject.tag = "Tile_5";
 
 
 			timer_start = 0;
 			timer_end = 0; // must initialize timer_start and timer_end. else, block rotate quickly and continuously.
 		}
 
-	}
+
+
+	}//onMouseOver
 
 }
