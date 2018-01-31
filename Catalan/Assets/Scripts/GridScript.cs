@@ -11,6 +11,7 @@ public class GridScript : MonoBehaviour {
 	public int N;
 	public Vector3[,] grid_0;
 	public Vector3 EndPosition;
+	private Vector3 unit_Right, unit_Down,coordinate;
 	private bool[,] Tile_info;
 	private bool[] Answer;
 	public float gridsize;
@@ -18,59 +19,72 @@ public class GridScript : MonoBehaviour {
 
 
 	void Awake(){
+		unit_Right = ((EndPosition - transform.position).x / (N - 1)) * Vector3.right; // (x,0,0) where x is a unit length of block width 
+		unit_Down = ((EndPosition - transform.position).y / (N - 1)) * Vector3.up; //(0,y,0) where y is a unit length of block height
+
 		Tile_info = new bool[7, 3];
 		Answer = new bool[5];
 		k = 0;
 	}
 
-	public Vector3 GetPosition(int i , int j, string tag){
-		if (tag == "Tile_0") {
-			return 	transform.position +
-			(j * (EndPosition - transform.position).x / (N - 1)) * Vector3.right +
-			(i * (EndPosition - transform.position).y / (N - 1)) * Vector3.up;
-		} 
+	public Vector3 GetPosition(int i , int j, int T){
 
-		if (tag == "Tile_1") {
-			return 	transform.position +
-				(j * (EndPosition - transform.position).x / (N - 1)) * Vector3.right +
-				(i * (EndPosition - transform.position).y / (N - 1)) * Vector3.up;
-		} 
+		switch(T){
 
+		// 1*1 block
+		case 0:
+		case 1:
+			coordinate = i * unit_Down + j * unit_Right;
+			break;
 	
-		else if (tag == "Tile_2") {
-			return 	transform.position +
-			(j * (EndPosition - transform.position).x / (N - 1)) * Vector3.right +
-			(i * (EndPosition - transform.position).y / (N - 1)) * Vector3.up +
-			(0.5f * (EndPosition - transform.position).x / (N - 1)) * Vector3.right;
-		} else if (tag == "Tile_3") {
-			return 	transform.position +
-			(j * (EndPosition - transform.position).x / (N - 1)) * Vector3.right +
-			(i * (EndPosition - transform.position).y / (N - 1)) * Vector3.up +
-			(0.5f * (EndPosition - transform.position).y / (N - 1)) * Vector3.up;
-		} else if (tag == "Tile_4") {
-			return 	transform.position +
-			(j * (EndPosition - transform.position).x / (N - 1)) * Vector3.right +
-			(i * (EndPosition - transform.position).y / (N - 1)) * Vector3.up +
-			(0.5f * (EndPosition - transform.position).x / (N - 1)) * Vector3.right +
-			(0.5f * (EndPosition - transform.position).y / (N - 1)) * Vector3.up;
+		// 1*2 block		
+		case 2: 
+			coordinate = i * unit_Down + (j + 0.5f) * unit_Right;
+			break;
 
-		} else if (tag == "Tile_5") {
-			return 	transform.position +
-			(j * (EndPosition - transform.position).x / (N - 1)) * Vector3.right +
-			(i * (EndPosition - transform.position).y / (N - 1)) * Vector3.up +
-			(1f * (EndPosition - transform.position).x / (N - 1)) * Vector3.right;
-		} 
+		// 2*1 block
+		case 3:
+			coordinate = (i+0.5f) * unit_Down + j * unit_Right;
+			break; 
 
-		else if (tag == "Tile_6") {
-			return 	transform.position +
-			(j * (EndPosition - transform.position).x / (N - 1)) * Vector3.right +
-			(i * (EndPosition - transform.position).y / (N - 1)) * Vector3.up +
-			(1f * (EndPosition - transform.position).y / (N - 1)) * Vector3.up;
-		}
+		// 2*2 block
+		case 4:
+			coordinate = (i + 0.5f) * unit_Down + (j + 0.5f) * unit_Right;
+			break;
+	
+		// 1*3 block
+		case 5:
+			coordinate = i * unit_Down + (j + 1f) * unit_Right;
+			break;
+
+		// 3*1 block
+		case 6:
+			coordinate = (i + 1f) * unit_Down + j * unit_Right;												
+			break;
+		
+		// 2*3 block
+		case 7:
+			coordinate = (i + 0.5f) * unit_Down + (j + 1f) * unit_Right;
+			break;
+		
+		// 3*2 block
+		case 8:
+			coordinate = (i + 1f) * unit_Down + (j + 0.5f) * unit_Right;
+			break;
+		
+		// 1*4 block
+		case 9:
+			coordinate = i * unit_Down + (j + 1.5f) * unit_Right;
+			break;
+		
+		// 4*1 block
+		case 10:
+			coordinate = i * unit_Down+ 1.5f*unit_Down + j * unit_Right;
+			break;
+		} //switch
 
 
-
-		return new Vector3 (0, 0, 0);
+		return transform.position + coordinate;
 
 	}
 
@@ -94,16 +108,13 @@ public class GridScript : MonoBehaviour {
 
 	public void Check (bool [,] tile_Info, int tag) {
 
-
-
+	
 		if (tag == 10) { //Right mouse click;
 			for (int i = 0; i < 7; i++)
 				for (int j = 0; j < 3; j++)
 					Tile_info [i, j] = false;
 				}
 			
-
-	
 		else
 			for (int i = 0; i < 3; i++)
 				Tile_info [tag, i] = tile_Info [tag, i];

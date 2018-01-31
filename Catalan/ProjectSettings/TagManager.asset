@@ -10,6 +10,11 @@ TagManager:
   - Tile_4
   - Tile_2
   - Tile_5
+  - Tile_6
+  - Tile_7
+  - Tile_8
+  - Tile_9
+  - Tile_10
   layers:
   - Default
   - TransparentFX

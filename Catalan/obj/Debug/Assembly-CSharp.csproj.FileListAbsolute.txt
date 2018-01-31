@@ -65,3 +65,4 @@ C:\Users\sgmat\Desktop\Unity\Catalan\Temp\bin\Debug\UnityEditor.iOS.Extensions.X
 C:\Users\sgmat\Desktop\Unity\Catalan\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
 C:\Users\sgmat\Desktop\Unity\Catalan\obj\Debug\Assembly-CSharp.dll
 C:\Users\sgmat\Desktop\Unity\Catalan\obj\Debug\Assembly-CSharp.pdb
+C:\Users\sgmat\Desktop\Unity\Catalan\Temp\bin\Debug\UnityEditor.WebGL.Extensions.dll

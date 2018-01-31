@@ -6,20 +6,20 @@ public class MouseClick : MonoBehaviour {
 
 
 	public GameObject grid;
-	private GridScript gridscript;
+//	private GridScript gridscript;
 	private float timer_start,timer_end;
 
 	// Use this for initialization
 	void Start(){
 		timer_start = 0f;
 		timer_end = 0f;
-		gridscript = grid.GetComponent<GridScript> ();
+	//	gridscript = grid.GetComponent<GridScript> ();
 	}
 
 
 	void OnMouseOver() {
 		Vector3 new_scale = new Vector3(0,0,0);
-		string temp;
+	
 		if (Input.GetMouseButtonDown (0)) {
 			timer_start = Time.time; // store the time at the beginning of 'click down' 
 		}
@@ -41,9 +41,16 @@ public class MouseClick : MonoBehaviour {
 				gameObject.tag = "Tile_2";
 			else if (gameObject.tag == "Tile_5") {
 				gameObject.tag = "Tile_6";
-			}
-			else if (gameObject.tag == "Tile_6")
+			} else if (gameObject.tag == "Tile_6")
 				gameObject.tag = "Tile_5";
+			else if (gameObject.tag == "Tile_7")
+				gameObject.tag = "Tile_8";
+			else if (gameObject.tag == "Tile_8")
+				gameObject.tag = "Tile_7";
+			else if (gameObject.tag =="Tile_9")
+				gameObject.tag ="Tile_10";
+			else if (gameObject.tag =="Tile_10")
+				gameObject.tag ="Tile_9";
 
 
 			timer_start = 0;
