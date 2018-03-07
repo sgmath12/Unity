@@ -9,6 +9,6 @@ This is my Unity 2D game projects.
         </li>
       </ul>
     <p>&emsp;&emsp;&emsp;&emsp;<img src = "http://cfile27.uf.tistory.com/image/998058395A68BCD6141ACE" width = "300" height = "150"></p> 
-    &nbsp&nbsp&nbsp <a href="hhttps://sgmath12.github.io/test/"> Play game! </a>
+   &nbsp&nbsp&nbsp&nbsp&nbsp <a href="https://sgmath12.github.io/test/"> Click to play game! </a>
   </body>
 </html>
